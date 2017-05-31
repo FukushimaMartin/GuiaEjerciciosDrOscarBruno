@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 /*
 MI-15: Se realiza una inspección en una fábrica de pinturas, y se detectaron 20 infracciones. 
@@ -19,40 +18,41 @@ int main() {
   unsigned tipo;
   float multa;
   char gravedad;
-  std::string motivo;
   float leve=0, medio=0, grave=0;
   int clausura=0;
 
   for (unsigned i=0; i<20; i++){
-    std::cout<<"Ingrese el Tipo de infraccion (1, 2, 3 ó 4): ";
+  	std::cout<<i+1;
+    std::cout<<"\nIngrese el Tipo de infraccion (1, 2, 3 o 4): \n";
     std::cin>>tipo;
-    std::cout<<"\nIngrese el valor de la Multa: ";
+    std::cout<<"\nIngrese el valor de la Multa: \n";
     std::cin>>multa;
-    std::cout<<"\nIngrese el tipo de Gravedad ('L', 'M', 'G'): ";
+    std::cout<<"\nIngrese el tipo de Gravedad ('L', 'M', 'G'): \n";
     std::cin>>gravedad;
     switch (gravedad){
-      case 'L':
-        leve = leve + multa;
-        break;
-      case 'M':
-        medio = medio + multa;
-        break;
-      case 'G':
-        grave = grave + multa;
-        if (tipo == 3 || tipo == 4){
-          clausura++;
-          }
-        break;
-      default:
-        std::cout<<"\n tipo de gravedad no existente";
-        break;
-    }
-}
-	  std::cout<<"\nEl total de la multa a pagar para el tipo de gravedad L es: "<<leve;
-  std::cout<<"\nEl total de la multa a pagar para el tipo de gravedad M es: "<<medio;
-  std::cout<<"\nEl total de la multa a pagar para el tipo de gravedad G es: "<<grave;
+    	case 'L':
+        	leve = leve + multa;
+        	break;
+      	case 'M':
+        	medio = medio + multa;
+        	break;
+      	case 'G':
+        	grave = grave + multa;
+        	if (tipo == 3 || tipo == 4){
+        		clausura++;
+         	}
+        	break;
+      	default:
+        	std::cout<<"\n tipo de gravedad no existente";
+        	break;
+    	}
+    std::cout<<"\n\n";
+	}
+	std::cout<<"\nEl total de la multa a pagar para el tipo de gravedad L es: "<<leve;
+	std::cout<<"\nEl total de la multa a pagar para el tipo de gravedad M es: "<<medio;
+	std::cout<<"\nEl total de la multa a pagar para el tipo de gravedad G es: "<<grave;
   
-  if (clausura == 3){
-    std::cout<<"\nClausurar fabrica";
+	if (clausura >= 3){
+		std::cout<<"\n\n ****CLAUSURAR FABRICA!!****";
     }
 }
