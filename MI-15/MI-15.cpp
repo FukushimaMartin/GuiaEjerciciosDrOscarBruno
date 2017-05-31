@@ -11,6 +11,8 @@ MI-15: Se realiza una inspección en una fábrica de pinturas, y se detectaron 2
       Se pide informar al final del proceso:
         Los valores totales de la multa a pagar de acuerdo al tipo de gravedad.
         La leyenda “Clausurar fábrica” si la cantidad de infracciones 3 y 4 con gravedad “G” sean mayor a 3.
+Federico Martin Fukushima
+31/05/2017
 */
 
 int main() {
